@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>David Styles | Broadcast Professional</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0a0a0a;
+  --bg2: #141414;
+  --accent: #8a2be2;
+  --text: #ffffff;
+  --sub: #bbbbbb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+section {
+  padding: 80px 10%;
+}
+
+h1, h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+h1 { font-size: 4rem; }
+h2 { font-size: 2.5rem; margin-bottom: 20px; }
+
+p { color: var(--sub); }
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.hero-text { max-width: 500px; }
+
+.hero img {
+  width: 380px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(138,43,226,0.4);
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #000;
+}
+
+.btn-outline {
+  border: 2px solid var(--accent);
+  color: var(--text);
+  margin-left: 10px;
+}
+
+/* DEMO */
+.demo {
+  background: var(--bg2);
+  text-align: center;
+}
+
+.audio-container {
+  margin-top: 30px;
+  padding: 20px;
+  border: 2px solid var(--accent);
+  max-width: 600px;
+  margin: 30px auto 0;
+  background: #000;
+  box-shadow: 0 0 20px rgba(138,43,226,0.3);
+}
+
+audio {
+  width: 100%;
+  filter: invert(1);
+}
+
+/* WAVEFORM */
+.waveform {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+  margin-top: 20px;
+  height: 80px;
+}
+
+.bar {
+  width: 4px;
+  height: 10px;
+  background: var(--accent);
+  box-shadow: 0 0 10px var(--accent);
+}
+
+/* ABOUT */
+.about {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.about img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* RESUME */
+.resume {
+  text-align: center;
+}
+
+.pdf-viewer {
+  margin-top: 30px;
+  border: 2px solid var(--accent);
+}
+
+/* SERVICES */
+.services {
+  background: var(--bg2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #000;
+  padding: 20px;
+  border-top: 3px solid var(--accent);
+}
+
+/* CONTACT */
+.contact {
+  text-align: center;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #000;
+  border: 1px solid #333;
+  color: white;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  background: var(--accent);
+  border: none;
+  font-weight: bold;
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+  .hero, .about {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  h1 { font-size: 3rem; }
+}
+/* VIDEO SECTION */
+.video {
+  text-align: center;
+  background: var(--bg);
+}
+
+.video-container {
+  margin-top: 30px;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 25px rgba(138,43,226,0.3);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <h1>Transport the Audience</h1>
+    <p>
+      Broadcast professional specializing in traditional sports, motorsports, sports betting,
+      and high-impact live programming.
+    </p>
+
+    <a href="#demo" class="btn btn-primary">Listen Here</a>
+    <a href="#contact" class="btn btn-outline">Book David</a>
+  </div>
+
+  <img src="headshot.jpg" alt="David Styles">
+</section>
+
+<!-- DEMO -->
+<section id="demo" class="demo">
+  <h2>HEAR THE ENERGY. FEEL THE MOMENT.</h2>
+
+  <div class="audio-container">
+    <audio id="audioPlayer" controls>
+      <source src="demo.wav" type="audio/wav">
+    </audio>
+
+    <div id="waveform" class="waveform"></div>
+  </div>
+</section>
+
+<!-- VIDEO REEL -->
+<section class="video">
+  <h2>FAST CARS AND SHARP BETS</h2>
+
+  <div class="video-container">
+    <iframe 
+      src="https://www.youtube.com/embed/videoseries?si=r0jjsEDjsixLgyds&controls=0&list=PLiZuN1ouaHMEf6feee2_9q9RJ1b9ybEUG" 
+      title="David Styles Video Reel"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen>
+    </iframe>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about">
+  <img src="headshot.jpg" alt="David Styles">
+
+  <div>
+    <h2>LET’S TELL YOUR STORY TOGETHER.</h2>
+    <p>
+      David Styles is a broadcast professional with over a decade of experience in play-by-play,
+      live interviewing, and radio and television production. Specializing in traditional sports,
+      motorsports, and sports betting, he brings energy, clarity, and precision to every broadcast.
+    </p>
+  </div>
+</section>
+
+<!-- RESUME -->
+<section class="resume">
+  <h2>RESUME</h2>
+
+  <p>Download or view my full broadcast and production experience.</p>
+
+  <a href="resume.pdf" class="btn btn-primary" target="_blank">Download Resume</a>
+
+  <div class="pdf-viewer">
+    <iframe src="resume.pdf" width="100%" height="500px"></iframe>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services">
+  <h2>JACK OF ALL TRADES</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Broadcast Talent</h3>
+      <p>Play-by-play, studio hosting, and analysis.</p>
+    </div>
+
+    <div class="card">
+      <h3>Live Show Directing</h3>
+      <p>Keeping sponsors aligned and audiences engaged.</p>
+    </div>
+
+    <div class="card">
+      <h3>Voiceover</h3>
+      <p>Commercial and promotional voice work.</p>
+    </div>
+
+    <div class="card">
+      <h3>Consulting</h3>
+      <p>Broadcast strategy and production workflow.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <h2>LET’S GO LIVE.</h2>
+
+  <form>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Your Email">
+    <textarea rows="5" placeholder="Your Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<!-- WAVEFORM SCRIPT -->
+<script>
+const audio = document.getElementById("audioPlayer");
+const waveform = document.getElementById("waveform");
+
+for (let i = 0; i < 40; i++) {
+  const bar = document.createElement("div");
+  bar.classList.add("bar");
+  waveform.appendChild(bar);
+}
+
+const bars = document.querySelectorAll(".bar");
+
+function animate() {
+  if (!audio.paused) {
+    bars.forEach(bar => {
+      bar.style.height = (Math.random() * 70 + 10) + "px";
+    });
+  } else {
+    bars.forEach(bar => {
+      bar.style.height = "10px";
+    });
+  }
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+
+</body>
+</html>
