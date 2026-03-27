@@ -213,6 +213,39 @@ button {
   width: 100%;
   height: 100%;
 }
+/* PHOTO GRID */
+.photo-grid {
+  text-align: center;
+  background: var(--bg2);
+}
+
+.grid-photos {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.grid-photos img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-photos img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(138,43,226,0.5);
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+  .grid-photos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+  
 </style>
 </head>
 
@@ -234,6 +267,22 @@ button {
   <img src="d-styles-headshot.jpeg" alt="David Styles">
 </section>
 
+<!-- PHOTO GRID -->
+<section class="photo-grid">
+  <h2>IN THE MOMENT</h2>
+
+  <div class="grid-photos">
+    <img src="photo1.jpg" alt="Broadcast moment">
+    <img src="photo2.jpg" alt="On-air shot">
+    <img src="photo3.jpg" alt="Interview">
+    <img src="photo4.jpg" alt="Studio work">
+    <img src="photo5.jpg" alt="Trackside">
+    <img src="photo6.jpg" alt="Live production">
+    <img src="photo7.jpg" alt="Broadcast setup">
+    <img src="photo8.jpg" alt="Event coverage">
+  </div>
+</section>
+  
 <!-- DEMO -->
 <section id="demo" class="demo">
   <h2>HEAR THE ENERGY. FEEL THE MOMENT.</h2>
